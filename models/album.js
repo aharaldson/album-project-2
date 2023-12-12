@@ -3,10 +3,7 @@ const { default: mongoose } = require("mongoose");
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-    content: {
-      type: String,
-      required: true
-    },
+    content: String,
     rating: {
       type: Number,
       min: 1,
@@ -30,7 +27,7 @@ const albumSchema = new Schema ({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true
+        required: true,
       },
     tracks: [String],
     reviews: [reviewSchema]

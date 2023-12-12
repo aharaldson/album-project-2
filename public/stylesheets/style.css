@@ -85,7 +85,7 @@ nav > a.active {
 }
 
 table {
-  font-size: 20px;
+  font-size: auto;
   margin: auto;
 }
 
@@ -101,6 +101,10 @@ table td {
 
 #list td:nth-child(2), #list td:nth-child(3){
   min-width: 100px;
+}
+
+tr {
+  border-bottom: 1px solid #ddd;
 }
 
 #list a {
@@ -180,6 +184,8 @@ hr {
 
 .login img {
   height: 30px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .review-user {

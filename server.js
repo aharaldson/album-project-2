@@ -8,13 +8,13 @@ const passport = require('passport');
 const methodOverride = require('method-override')
 
 require('dotenv').config();
-// connect to the database with AFTER the config vars are processed
 require('./config/database');
 require('./config/passport');
 
 const indexRouter = require('./routes/index');
 const albumsRouter = require('./routes/albums');
 const reviewsRouter = require('./routes/reviews');
+const shelfRouter = require('./routes/shelf');
 
 var app = express();
 
@@ -46,19 +46,16 @@ app.use(function( req, res, next) {
 app.use('/', indexRouter);
 app.use('/albums', albumsRouter);
 app.use('/', reviewsRouter);
+app.use('/shelf', shelfRouter);
 
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });

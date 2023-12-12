@@ -9,6 +9,10 @@ const userSchema = new Schema({
   },
   email: String,
   avatar: String,
+  shelf: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Album',
+  }],
 }, {
   timestamps: true
 });

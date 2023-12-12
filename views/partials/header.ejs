@@ -1,21 +1,23 @@
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WaxShare</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <nav>
-    <img src="/images/pngegg.png">
-    <a href="/">Home</a>
-    <a href="/albums" <%- title === 'All Albums' ? 'class="active"' : '' %>>ALL ALBUMS</a>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  
+  <nav class="navbar nav-fill w-100  navbar-dark bg-dark mx-auto display-4">
+    <img src="/images/pngegg.png" class="img-fluid" style="width: 75px">
+    <a href="/albums" class="link-secondary link-underline-dark"<%- title === 'All Albums' ? 'class="active"' : '' %>>all albums</a>
+    <a href="/shelf" class="link-secondary link-underline-dark">my shelf</a>
     <% if (user) { %>
-      <a href="/albums/new" <%- title === 'Add Album' ? 'class="active"' : '' %>>ADD ALBUM</a>
-      <a href="/logout">LOG OUT</a>
-    <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-    <% } %>
+      <a href="/albums/new" class="link-secondary link-underline-dark"<%- title === 'Add Album' ? 'class="active"' : '' %>>add album</a>
+        <a href="/logout" class="link-secondary link-underline-dark">log out</a>
+      <% } else { %>
+        <a href="/auth/google" class="login link-secondary link-underline-dark">log in&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" class="img-fluid" style="width: 60px"></a>
+      <% } %>
   </nav>
 </head>
-<body>
-  <h1><%= title %></h1>
+<body class="bg-secondary display-4 text-tertiary">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <h1 class="container text-center text-lowercase display-2"><%= title %></h1>
+<br>

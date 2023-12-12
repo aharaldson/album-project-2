@@ -26,11 +26,11 @@ async function create(req, res) {
         if (req.body[key] === '') delete req.body[key];
       }
       try {
-        const album = await Album.create(req.body);
         req.body.user = req.user._id;
+        const album = await Album.create(req.body);
         res.redirect(`/albums/${album._id}`);
       } catch (err) {
         console.log(err);
-        res.render('albums/new', { errorMsg: err.message });
+        res.render('albums/new', {  title: 'Add Album', errorMsg: err.message });
       }
 }

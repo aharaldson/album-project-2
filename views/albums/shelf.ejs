@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-5">
+  <h2 class="mb-4">your shelf</h2>
+
+  <% if (user && user.shelf && user.shelf.length > 0) { %>
+  <table id="table" class="table table-dark table-hover table-striped">
+    <tbody>
+      <% user.shelf.forEach(function(album) { %>
+        <tr>
+          <td scope="col text-muted"><strong><%= album.title %></strong> by <%= album.artist %></td>
+          <td><a href="/albums/<%= album._id %>" class="link-dark link-offset-2 link-underline link-underline-opacity-0">details</a></td>
+        </tr>
+      </tbody>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <p>your shelf is empty.</p>
+  <% } %>
+</div>
+
+<%- include('../partials/footer') %>

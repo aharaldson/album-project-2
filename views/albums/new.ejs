@@ -1,15 +1,25 @@
 <%- include('../partials/header') %>
 
-<% if (user) { %>
-    <form id="new-form" action="/albums" method="POST">
-        <label>Artist:</label>
-        <input type="text" name="artist">
-        <label>Title:</label>
-        <input type="text" name="title">
-        <label>Release Year:</label>
-        <input type="number" name="releaseYear">
-        <input type="submit" value="Add Album">
-    </form>
-<% } %>
+<div class="container text-center">
+    <% if (user) { %>
+        <form id="new-form" action="/albums" method="POST">
+        <div class="row">
+            <div class="col">
+                <label class="form-label">artist:</label>
+                <input type="text" class="form-control bg-dark text-white" name="artist">
+            </div>
+            <div class="col">
+                <label class="form-label">title:</label>
+                <input type="text" class="form-control bg-dark text-white" name="title">
+            </div>
+            <div class="col">
+                <label class="form-label">release year:</label>
+                <input type="number" class="form-control bg-dark text-white" name="releaseYear">
+            </div>
+        </div>
+            <input type="submit" class="btn btn-dark" value="Add Album">
+        </form>
+    <% } %>
+</div>
 
 <%- include('../partials/footer') %>

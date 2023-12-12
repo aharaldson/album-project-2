@@ -1,20 +1,21 @@
 <%- include('../partials/header') %>
 
-<table id="list">
+<table id="table" class="table table-dark table-hover table-striped text-center ">
     <thead>
       <tr>
-        <th>Artist</th>
-        <th>Title</th>
-        <th>Release<br>Year</th>
+        <th scope="col">artist</th>
+        <th scope="col">title</th>
+        <th scope="col">release year</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       <% albums.forEach(function(album) { %>
         <tr>
-            <td><%= album.artist %></td>
-            <td><%= album.title %></td>
-            <td><%= album.releaseYear %></td>
-            <td><a href="/albums/<%= album._id %>">DETAILS</a></td>
+            <td scope="col text-muted"><%= album.artist %></td>
+            <td scope="col text-muted"><%= album.title %></td>
+            <td scope="col text-muted"><%= album.releaseYear %></td>
+            <td scope="col text-muted"><a href="/albums/<%= album._id %>" class="link-dark link-offset-2 link-underline link-underline-opacity-0">details</a></td>
         </tr>
         <% }); %>
       </tbody>
